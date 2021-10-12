@@ -1,3 +1,7 @@
+# Purely for development pusposes
+/selfsigned-key.key
+/selfsigned-cert.crt
+
 # Logs
 logs
 *.log
