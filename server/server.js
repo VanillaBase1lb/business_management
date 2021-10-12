@@ -15,6 +15,9 @@ const ssl_params = {
 app.use("/static", express.static(__dirname + "/../client/static"))
 
 // routing
+app.get("/test", (req, res) => {
+    res.send("Server working")
+})
 app.get(["/", "/home"], (req, res) => {
     res.sendFile(path.join(__dirname, "/../client/html/home.html"))
 })

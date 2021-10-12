@@ -8,8 +8,8 @@ const server_config = {
     },
     ssl:
     {
-        key: fs.readFileSync(__dirname + "/../selfsigned-key.key"),
-        cert: fs.readFileSync(__dirname + "/../selfsigned-cert.crt")
+        key: fs.readFileSync(__dirname + "/selfsigned-key.key"),
+        cert: fs.readFileSync(__dirname + "/selfsigned-cert.crt")
     }
 } 
 
