@@ -144,6 +144,7 @@
 
 ![Website Navigation Chart](https://github.com/KickStar35/business_management_and_report/blob/main/documentation/Website%20Navigation.png)
 
-
+<h3>Link</h3>
+https://lucid.app/lucidchart/eb511a3e-e0dc-420b-a157-9f23ebf21a63/edit?viewport_loc=265%2C-72%2C2076%2C975%2C0_0&invitationId=inv_0b8f85e1-2cae-4b42-8011-8f5a9a1db758
 
 
