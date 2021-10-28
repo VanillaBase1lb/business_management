@@ -61,7 +61,7 @@
 <li> date</li>
 <li> amount</li>
 <li> product name</li>
-<li> warehouse name</li>
+<li> Factory name</li>
 </ol>
 <h3>Products sold</h3>
 <ol>
@@ -76,9 +76,9 @@
 <li> product name</li>
 </ol>
   
-<h2>Warehouse</h2>
+<h2>Factory</h2>
 <h4>Business Name</h4>
-<h4>Warehouse Name</h4>
+<h4>Factory Name</h4>
 <h3>Raw materials ordered</h3>
 <ol>
 <li> date</li>
@@ -110,8 +110,8 @@
 <h4>Business Name - unique</h4>
 <h4>business_owner</h4>
 <h4>Shops - multiple</h4>
-<h4>Warehouses - multiple</h4>
-<h3>Money given to warehouse</h3>
+<h4>Factory - multiple</h4>
+<h3>Money given to Factory</h3>
 <ol>
 <li> date</li>
 <li> amount</li>
@@ -126,10 +126,10 @@
 <ol>
 <li> username(lowercase and uppercase same, 0-9 and underscore)</li>
 <li> hashed_password</li>
-<li> user_type(0 for business owner, 1 for shop manager, 2 for warehouse manager)</li>
+<li> user_type(0 for business owner, 1 for shop manager, 2 for Factory manager)</li>
 <li> name</li>
 <li> business owned - if owner</li>
-<li> warehouse managed - if warehouse manager</li>
+<li> Factory managed - if Factory manager</li>
 <li> shop managed - if shop manager</li>
 <li> business name - if shop/factory manager</li>
 </ol>
