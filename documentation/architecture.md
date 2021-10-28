@@ -1,6 +1,6 @@
 <h1>----------Frontend----------</h1>
 
-<h2>Pages</h2> 
+<h2>Pages(more to be added)</h2> 
 <ol>
  <li> Home Page- Contains Login and Signup Options. </li>
  <li> Login Page- Contains Email id and Password fields. </li>
@@ -9,11 +9,11 @@
  <li> Notifications. </li>
  <li> Profile Settings. </li>
  <li> Links to all shops and factories within Business. </li>
-  </ol>
+</ol>
 
 <h1>----------Backend----------</h1>
 
-<h2>APIs</h2>
+<h2>APIs(more to be added)</h2>
 <ol>
 <li> /404page</li>
 <li> /login</li>
@@ -21,6 +21,12 @@
 <li> /home</li>
 </ol>
 
+<h2>Features</h2>
+<ol>
+<li> User signup and login</li>
+<li> Static page serving</li>
+<li> querying database and sending data to the frontend</li>
+</ol>
 
 <h1>----------Database----------</h1>
 
