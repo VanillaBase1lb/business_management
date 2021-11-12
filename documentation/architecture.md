@@ -31,6 +31,7 @@ Shop Manager-
 <li>Enter products sold</li>
 </ul>
 </ul>
+
 </ol>
 <h1>----------Backend----------</h1>
 
@@ -53,6 +54,7 @@ Shop Manager-
 <li> Static page serving</li>
 <li> Querying database and sending data to the frontend</li>
 <li> Session managment</li>
+
 </ol>
 
 <h1>----------Database----------</h1>
@@ -94,6 +96,7 @@ Shop Manager-
 <li> Date</li>
 <li> Amount</li>
 <li> Product name</li>
+
 </ol>
 
 <h3>Product shipped</h3>
