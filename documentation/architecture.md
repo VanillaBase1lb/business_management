@@ -131,6 +131,7 @@ Shop Manager-
 <h1>----------Overview----------</h1>
 
 <h2>Frontend-Backend Flowchart</h2>
+
 ![Frontend-Backend Flowchart](https://github.com/VanillaBase1lb/business_management/blob/main/documentation/Frontend-Backend%20Flowchart.png)
 
 <h2>Website Navigation Chart</h2>
