@@ -1,5 +1,7 @@
 # Business Management and Reporting application
 
+A web application meant for small businesses to track and manage their shop outlet and factory.
+
 <h2>Frontend</h2> 
 <ul>
  <li>HTML </li>
