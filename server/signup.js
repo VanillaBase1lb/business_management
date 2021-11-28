@@ -1,4 +1,4 @@
-let User = require("./dbconnector")
+let User = require("./database/dbconnector")
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
 
