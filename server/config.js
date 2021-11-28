@@ -10,6 +10,11 @@ const server_config = {
     {
         key: fs.readFileSync(__dirname + "/selfsigned-key.key"),
         cert: fs.readFileSync(__dirname + "/selfsigned-cert.crt")
+    },
+    database:
+    {
+        username: "newuser",
+        password: "newuser"
     }
 } 
 
