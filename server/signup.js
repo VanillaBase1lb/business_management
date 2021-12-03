@@ -15,9 +15,9 @@ async function signupUser(req, res) {
         res.send("invalid email")
         return
     }
-    User.exists({username: req.body.username}, (err, doc) => {
+    User.exists({$or: [{username: req.body.username}, {email: req.body.email}]}, (err, doc) => {
         if (doc) {
-            res.send("username already exists")
+            res.send("username or email already exists")
             return
         }
         bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
@@ -32,7 +32,7 @@ async function signupUser(req, res) {
             user.save().then(result => {
                 console.log(result)
             })
-            res.send("got it")
+            res.send("user signup succesfull")
             return
         })
     })
