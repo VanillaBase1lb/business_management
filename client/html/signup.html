@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <script src="../sever/signup.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
@@ -23,21 +24,21 @@
                     <p class="text-white-50 mb-5">Please enter your login and password!</p>
                     <!-- action element gets passed to back end -->
                     <!-- post means form input will be passed to the action URL -->
-                    <form action="#log" method="post">
+                    <form action="/signup" method="post">
 
                     <!-- <div class="form-outline form-white mb-4"> -->
-                      <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                      <label class="form-label" for="typeEmailX">Email</label>
+                      <input type="email" id="email" class="form-control form-control-lg" />
+                      <label class="form-label" for="email">Email</label>
 
-                      <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                      <label class="form-label" for="typePasswordX">Password</label>
+                      <input type="password" id="password" class="form-control form-control-lg" />
+                      <label class="form-label" for="password">Password</label>
                       <br>
                     <!-- </div> -->
       
                     <br>
                     <div class="form-group">
-                        <label for="inputState">Type pf User</label>
-                        <select id="inputState" class="form-control-lg">
+                        <label for="user_type">Type of User</label>
+                        <select id="user_type" class="form-control-lg">
                           <option selected>Choose...</option>
                           <option>Owner</option>
                           <option>Warehouse Manager</option>
