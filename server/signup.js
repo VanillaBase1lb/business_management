@@ -34,7 +34,7 @@ async function signupUser(req, res) {
             })
             req.session.userid = req.body.username
             req.session.usertype = req.body.user_type
-            res.send("user signup succesfull")
+            res.redirect("/")
             return
         })
     })
