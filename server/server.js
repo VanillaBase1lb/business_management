@@ -4,7 +4,11 @@ const https = require("https")
 const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
+const cookieParser = require("cookie-parser")
+const sessions = require("express-session")
 let signupUser = require("./signup")
+let loginUser = require("./login")
+let apiUser = require("./userapi")
 
 // loads the configuration
 const server_config = require(__dirname + "/config")
@@ -15,7 +19,14 @@ const ssl_params = {
 
 // sets from where to get static files and which endpoint to access it
 app.use("/static", express.static(__dirname + "/../client/static"))
-app.use(express.json());
+app.use(express.json())
+app.use(sessions({
+    secret: server_config.session.secret,
+    saveUninitialized:true,
+    cookie: { maxAge: 99999999999999 },
+    resave: false
+}));;
+app.use(cookieParser())
 
 // connect mongoose
 // username and password are in config.js because
@@ -27,7 +38,25 @@ app.get("/test", (req, res) => {
 })
 
 app.get(["/", "/home"], (req, res) => {
-    res.sendFile(path.join(__dirname, "/../client/html/home.html"))
+    if (req.session.userid) {
+        console.log(req.session)
+        switch (req.session.usertype) {
+            case 0:
+                res.redirect("/owner/dashboard")
+                return
+            case 1:
+                res.redirect("/shop/dashboard")
+                return
+            case 2:
+                res.redirect("/facroty/dashboard")
+                return
+            default:
+                return
+        }
+    }
+    else {
+        res.sendFile(path.join(__dirname, "/../client/html/home.html"))
+    }
 })
 
 app.get("/signup", (req, res) => {
@@ -39,6 +68,36 @@ app.post("/signup", (req, res) => {
 
 app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "/../client/html/login.html"))
+})
+app.post("/login", (req, res) => {
+    loginUser(req, res)
+})
+
+app.get("/owner/dashboard", (req, res) => {
+    res.sendFile(path.join(__dirname, "/../client/html/owner/dashboard.html"))
+})
+
+app.get("/shop/dashboard", (req, res) => {
+    res.sendFile(path.join(__dirname, "/../client/html/shop/dashboard.html"))
+})
+
+app.get("/factory/dashboard", (req, res) => {
+    res.sendFile(path.join(__dirname, "/../client/html/factory/dashboard.html"))
+})
+
+app.get("/api/user", (req, res) => {
+    if (!req.session.userid) {
+        res.send("user not logged in")
+        return
+    }
+    else {
+        apiUser(req, res)
+    }
+})
+
+app.get("/logout", (req, res) => {
+    req.session.destroy()
+    res.redirect("/")
 })
 
 app.get("/404page", (req, res) => {

@@ -5,8 +5,8 @@ let User = require("./database/dbconnector")
 const saltRounds = 5
 
 async function signupUser(req, res) {
-    let username_regex = new RegExp("^[a-z0-9]+$")
-    let email_regex = new RegExp(".+\@.+\..+")
+    let username_regex = new RegExp(/^[a-z0-9]+$/)
+    let email_regex = new RegExp(/^.+\@.+\..+$/)
     if (!username_regex.test(req.body.username)) {
         res.send("invalid username only digits and lowercase allowed")
         return
@@ -30,8 +30,10 @@ async function signupUser(req, res) {
                 business_name: req.body.business_name
             })
             user.save().then(result => {
-                console.log(result)
+                // console.log(result)
             })
+            req.session.userid = req.body.username
+            req.session.usertype = req.body.user_type
             res.send("user signup succesfull")
             return
         })
