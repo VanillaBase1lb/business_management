@@ -15,6 +15,10 @@ const server_config = {
     {
         username: "newuser",
         password: "newuser"
+    },
+    session:
+    {
+        secret: "verybigsecret"
     }
 } 
 
