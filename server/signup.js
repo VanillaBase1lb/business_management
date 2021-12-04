@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
 const alert = require("alert")
-let User = require("./database/dbconnector")
+let { User } = require("./database/dbconnector")
 
 const saltRounds = 5
 
@@ -11,17 +11,20 @@ async function signupUser(req, res) {
     if (!username_regex.test(req.body.username)) {
         // res.send("invalid username only digits and lowercase allowed")
         alert("invalid username only digits and lowercase allowed")
+        res.json({msg: "invalid username only digits and lowercase allowed"})
         return
     }
     if (!email_regex.test(req.body.email)) {
         // res.send("invalid email")
             alert("invalid email")
+            res.json({msg: "invalid email"})
         return
     }
-    User.exists({$or: [{username: req.body.username}, {email: req.body.email}]}, (err, doc) => {
+    User.exists({$or: [{business_name: req.body.business_name}, {username: req.body.username}, {email: req.body.email}]}, (err, doc) => {
         if (doc) {
             // res.send("username or email already exists")
-            alert("username or email already exists")
+            alert("username, email or business name already exists")
+            res.json({msg: "username, email or business name already exists"})
             return
         }
         bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
@@ -31,13 +34,16 @@ async function signupUser(req, res) {
                 password_hash: hash,
                 email: req.body.email,
                 user_type: req.body.user_type,
-                business_name: req.body.business_name
+                business_name: req.body.business_name,
+                confirmed: false
             })
             user.save().then(result => {
                 // console.log(result)
             })
-            req.session.userid = req.body.username
-            req.session.usertype = req.body.user_type
+            req.session.userid = user.username
+            req.session.usertype = user.user_type
+            req.session.businessname = user.business_name
+            // console.log(req.session.usertype)
             res.redirect("/")
             return
         })

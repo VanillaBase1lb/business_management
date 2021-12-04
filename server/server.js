@@ -9,6 +9,8 @@ const sessions = require("express-session")
 let signupUser = require("./signup")
 let loginUser = require("./login")
 let apiUser = require("./userapi")
+let { apiProduct } = require("./productapi")
+let { addProduct } = require("./productapi")
 
 // loads the configuration
 const server_config = require(__dirname + "/config")
@@ -24,7 +26,7 @@ app.use(sessions({
     secret: server_config.session.secret,
     saveUninitialized:true,
     cookie: { maxAge: 99999999999999 },
-    resave: false
+    resave: true
 }));;
 app.use(cookieParser())
 
@@ -48,7 +50,7 @@ app.get(["/", "/home"], (req, res) => {
                 res.redirect("/shop/dashboard")
                 return
             case 2:
-                res.redirect("/facroty/dashboard")
+                res.redirect("/factory/dashboard")
                 return
             default:
                 return
@@ -92,6 +94,27 @@ app.get("/api/user", (req, res) => {
     }
     else {
         apiUser(req, res)
+    }
+})
+
+app.get("/api/products", (req, res) => {
+    if (!req.session.userid) {
+        res.send("user not logged in")
+        return
+    }
+    else {
+        apiProduct(req, res)
+    }
+})
+
+app.post("/api/addproduct", (req, res) => {
+    // console.log(req.session.usertype)
+    if (req.session.usertype == 0 || req.session.usertype == 2) {
+        addProduct(req, res)
+    }
+    else {
+        res.send("no authorization")
+        return
     }
 })
 
