@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
+const alert = require("alert")
 let User = require("./database/dbconnector")
 
 async function loginUser(req, res) {
@@ -13,11 +14,13 @@ async function loginUser(req, res) {
             // PENDING redirect to dashboard/home page
         }
         else {
-            res.send("invalid password")
+            // res.send("invalid password")
+            alert("invalid password")
         }
     }
     else {
-        res.send("invalid username")
+        // res.send("invalid username")
+        alert("invalid username")
     }
 }
 

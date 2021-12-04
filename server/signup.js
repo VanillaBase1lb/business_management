@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
+const alert = require("alert")
 let User = require("./database/dbconnector")
 
 const saltRounds = 5
@@ -8,16 +9,19 @@ async function signupUser(req, res) {
     let username_regex = new RegExp(/^[a-z0-9]+$/)
     let email_regex = new RegExp(/^.+\@.+\..+$/)
     if (!username_regex.test(req.body.username)) {
-        res.send("invalid username only digits and lowercase allowed")
+        // res.send("invalid username only digits and lowercase allowed")
+        alert("invalid username only digits and lowercase allowed")
         return
     }
     if (!email_regex.test(req.body.email)) {
-        res.send("invalid email")
+        // res.send("invalid email")
+            alert("invalid email")
         return
     }
     User.exists({$or: [{username: req.body.username}, {email: req.body.email}]}, (err, doc) => {
         if (doc) {
-            res.send("username or email already exists")
+            // res.send("username or email already exists")
+            alert("username or email already exists")
             return
         }
         bcrypt.hash(req.body.password, saltRounds, (err, hash) => {

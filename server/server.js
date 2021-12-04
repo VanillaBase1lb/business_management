@@ -39,7 +39,7 @@ app.get("/test", (req, res) => {
 
 app.get(["/", "/home"], (req, res) => {
     if (req.session.userid) {
-        console.log(req.session)
+        // console.log(req.session)
         switch (req.session.usertype) {
             case 0:
                 res.redirect("/owner/dashboard")
