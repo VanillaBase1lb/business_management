@@ -29,7 +29,7 @@ async function signupUser(req, res) {
         }
         bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
             const user = new User({
-                _id: new mongoose.Types.ObjectId(),
+                // _id: new mongoose.Types.ObjectId(),
                 username: req.body.username,
                 password_hash: hash,
                 email: req.body.email,
