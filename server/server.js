@@ -12,6 +12,7 @@ let apiUser = require("./userapi")
 let { apiProduct } = require("./productapi")
 let { addProduct } = require("./productapi")
 let { madeProduct } = require("./productapi")
+let { soldProduct } = require("./productapi")
 
 // loads the configuration
 const server_config = require(__dirname + "/config")
@@ -112,7 +113,7 @@ app.get("/api/products", (req, res) => {
 
 app.post("/api/addproduct", (req, res) => {
     // console.log(req.session.usertype)
-    if (req.session.usertype == 0) {
+    if (req.session.usertype == 2) {
         addProduct(req, res)
     }
     else {
@@ -125,6 +126,17 @@ app.post("/api/productmade", (req, res) => {
     // console.log(req.session.usertype)
     if (req.session.usertype == 2) {
         madeProduct(req, res)
+    }
+    else {
+        res.send("no authorization")
+        return
+    }
+})
+
+app.post("/api/productsold", (req, res) => {
+    // console.log(req.session.usertype)
+    if (req.session.usertype == 1) {
+        soldProduct(req, res)
     }
     else {
         res.send("no authorization")

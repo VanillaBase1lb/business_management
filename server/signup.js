@@ -20,7 +20,8 @@ async function signupUser(req, res) {
             res.json({msg: "invalid email"})
         return
     }
-    User.exists({$or: [{business_name: req.body.business_name}, {username: req.body.username}, {email: req.body.email}]}, (err, doc) => {
+    // PENDING multiple owners/managers for same business cannot exist
+    User.exists({$or: [{username: req.body.username}, {email: req.body.email}]}, (err, doc) => {
         if (doc) {
             // res.send("username or email already exists")
             alert("username, email or business name already exists")

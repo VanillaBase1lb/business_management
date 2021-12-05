@@ -17,6 +17,5 @@ function sendData() {
    }).then(
        // window.location.pathname = "/"
        res => console.log(res)
-       // PENDING read response whether input valid or not
    )
 }
