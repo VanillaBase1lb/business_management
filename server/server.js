@@ -1,4 +1,3 @@
-
 const path = require("path")
 const https = require("https")
 const express = require("express")
@@ -13,6 +12,7 @@ let { apiProduct } = require("./productapi")
 let { addProduct } = require("./productapi")
 let { madeProduct } = require("./productapi")
 let { soldProduct } = require("./productapi")
+let { logs } = require("./logs")
 
 // loads the configuration
 const server_config = require(__dirname + "/config")
@@ -140,6 +140,16 @@ app.post("/api/productsold", (req, res) => {
     }
     else {
         res.send("no authorization")
+        return
+    }
+})
+
+app.post("/api/logs", (req, res) => {
+    if (req.session.businessname) {
+        logs(req, res)
+    }
+    else {
+        res.send("no business found")
         return
     }
 })
