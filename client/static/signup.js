@@ -1,12 +1,13 @@
 function sendData() {
     const URL = '/signup' 
+    
     const data = {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
         // user_type: document.getElementById("user_type").value,
-        user_type: 0,
-        business_name: "koca",
-        username: "someusername"
+        user_type: document.getElementById("user_type").value,
+        business_name: document.getElementById("business_name").value, 
+        username: document.getElementById("username").value
     };
     // console.log(data)
     // console.log("test")
