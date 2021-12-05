@@ -11,8 +11,8 @@ async function loginUser(req, res) {
             req.session.userid = user.username
             req.session.usertype = user.user_type
             req.session.businessname = user.business_name
-            res.send("user logged in")
-            // PENDING redirect to dashboard or home page
+            res.redirect("/")
+            // res.send("user logged in")
         }
         else {
             // res.send("invalid password")
