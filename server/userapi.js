@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-let User = require("./database/dbconnector")
+let { User } = require("./database/dbconnector")
 
 async function apiUser(req, res) {
     const user = await User.findOne({username: req.session.userid})
@@ -8,7 +8,8 @@ async function apiUser(req, res) {
         username: user.username,
         user_type: user.user_type,
         email: user.email,
-        business_name: user.business_name
+        business_name: user.business_name,
+        confirmed: user.confirmed
     }
     res.setHeader('Content-Type', 'application/json')
     res.json(userdata)
