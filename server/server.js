@@ -144,7 +144,7 @@ app.post("/api/productsold", (req, res) => {
     }
 })
 
-app.post("/api/logs", (req, res) => {
+app.get("/api/logs", (req, res) => {
     if (req.session.businessname) {
         logs(req, res)
     }
