@@ -55,6 +55,10 @@ async function logs(req, res) {
     var highestrevenueseller = "highestrevenueseller"
     const revenuemax = Math.max.apply(null, productsall.map(function (x)  {return x.revenuegenerated}))
     const i2 = productsall.findIndex((element) => revenuemax == element.revenuegenerated)
+    if (i2 == -1) {
+        res.send("i forgot to fix this bug")
+        return
+    }
     highestrevenueseller = productsall[i2].product_name
 
     // console.log(bestseller)
