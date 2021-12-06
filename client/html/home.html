@@ -10,7 +10,10 @@
     <style>
 
     body {
-    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fleverageedu.com%2Fblog%2Fdiploma-in-business-management%2F&psig=AOvVaw36iP176FpP5lT2CWRQmhLx&ust=1638706310713000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCOCev-2OyvQCFQAAAAAdAAAAABAu");
+        background-image: url("https://localhost:8080/static/home_background.png");
+        background-size:     cover;                      /* <------ */
+        background-repeat:   no-repeat;
+        background-position: center center;
     }
 
     </style>
@@ -32,12 +35,12 @@
       
 
       <div class="d-flex justify-content-center m-3 p-3">
-        <a href="login.html"> <button class="btn btn-outline-dark btn-lg" type="submit" onclick="sendData()">Log In</button> </a>
+        <a href="/login"> <button class="btn btn-outline-dark btn-lg active" type="submit" onclick="sendData()">Log In</button> </a>
         
       </div>
 
       <div class="d-flex justify-content-center m-3 p-3">
-        <a href="signup.html"> <button class="btn btn-outline-dark btn-lg" type="submit" onclick="sendData()">Sign Up</button> </a>
+        <a href="/signup"> <button class="btn btn-outline-dark btn-lg active" type="submit" onclick="sendData()">Sign Up</button> </a>
         
         
       </div>
