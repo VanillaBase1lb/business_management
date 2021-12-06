@@ -1,12 +1,8 @@
 function sendData() {
    const URL = '/login' 
    const data = {
-      //  email: document.getElementById("email").value,
-      username: "someusername",
+      username: document.getElementById("username").value,
       password: document.getElementById("password").value
-       // user_type: document.getElementById("user_type").value,
-      //  user_type: 0,
-      //  business_name: "koca",
        
    };
    // console.log(data)
@@ -21,6 +17,5 @@ function sendData() {
    }).then(
        // window.location.pathname = "/"
        res => console.log(res)
-       // PENDING read response whether input valid or not
    )
 }
