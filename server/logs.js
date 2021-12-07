@@ -24,7 +24,9 @@ async function logs(req, res) {
         let obj = {
             product_name: recordsmade[i].product_name,
             product_amount_made: recordsmade[i].product_amount,
-            date: JSON.stringify(recordsmade[i].date) // UNPLEASANT
+            date: JSON.stringify(recordsmade[i].date), // UNPLEASANT
+            product_amount_sold: 0,
+            consistent: true
         }
         records.push(obj)
     }
@@ -36,6 +38,9 @@ async function logs(req, res) {
                 records[i].product_amount_sold = recordssold[j].product_amount
                 const index = productsall.findIndex((element) => records[i].product_name == element.product_name)
                 productsall[index].soldcount += records[i].product_amount_sold
+                if (records[i].product_amount_sold != records[i].product_amount_made) {
+                    records[i].consistent = false
+                }
             }
         }
     }

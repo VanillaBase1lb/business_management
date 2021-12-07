@@ -13,6 +13,7 @@ let { addProduct } = require("./productapi")
 let { madeProduct } = require("./productapi")
 let { soldProduct } = require("./productapi")
 let { logs } = require("./logs")
+let { apiProfile } = require("./profile")
 
 // loads the configuration
 const server_config = require(__dirname + "/config")
@@ -151,6 +152,16 @@ app.get("/api/logs", (req, res) => {
     else {
         res.send("no business found")
         return
+    }
+})
+
+app.post("/profile", (req, res) => {
+    if (!req.session.userid) {
+        res.send("user not logged in")
+        return
+    }
+    else {
+        apiProfile(req, res)
     }
 })
 
