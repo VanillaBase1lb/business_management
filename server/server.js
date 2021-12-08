@@ -5,6 +5,7 @@ const app = express()
 const mongoose = require("mongoose")
 const cookieParser = require("cookie-parser")
 const sessions = require("express-session")
+const alert = require("alert")
 let signupUser = require("./signup")
 let loginUser = require("./login")
 let apiUser = require("./userapi")
@@ -39,7 +40,7 @@ mongoose.connect(`mongodb+srv://${server_config.database.username}:${server_conf
 
 // routing
 app.get("/test", (req, res) => {
-    res.send("Server working")
+    res.sendFile(path.join(__dirname, "/../client/html/test.html"))
 })
 
 app.get(["/", "/home"], (req, res) => {
@@ -76,20 +77,49 @@ app.post("/signup", (req, res) => {
 app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "/../client/html/login.html"))
 })
+
 app.post("/login", (req, res) => {
     loginUser(req, res)
 })
 
+app.get("/userprofile", (req, res) => {
+    res.sendFile(path.join(__dirname, "/../client/html/profile.html"))
+})
+
 app.get("/owner/dashboard", (req, res) => {
-    res.sendFile(path.join(__dirname, "/../client/html/owner/dashboard.html"))
+    if (req.session.usertype == 0) {
+        res.sendFile(path.join(__dirname, "/../client/html/owner/dashboard.html"))
+        return
+    }
+    alert("user not logged in")
+    res.redirect("/login")
+})
+
+app.get("/owner/logs", (req, res) => {
+    if (req.session.usertype == 0) {
+        res.sendFile(path.join(__dirname, "/../client/html/owner/logs.html"))
+        return
+    }
+    alert("user not logged in")
+    res.redirect("/login")
 })
 
 app.get("/shop/dashboard", (req, res) => {
+    if (req.session.usertype == 1) {
     res.sendFile(path.join(__dirname, "/../client/html/shop/dashboard.html"))
+        return
+    }
+    alert("user not logged in")
+    res.redirect("/")
 })
 
 app.get("/factory/dashboard", (req, res) => {
+    if (req.session.usertype == 2) {
     res.sendFile(path.join(__dirname, "/../client/html/factory/dashboard.html"))
+        return
+    }
+    alert("user not logged in")
+    res.redirect("/")
 })
 
 app.get("/api/user", (req, res) => {
@@ -145,7 +175,7 @@ app.post("/api/productsold", (req, res) => {
     }
 })
 
-app.get("/api/logs", (req, res) => {
+app.post("/api/logs", (req, res) => {
     if (req.session.businessname) {
         logs(req, res)
     }

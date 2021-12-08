@@ -12,7 +12,6 @@ async function loginUser(req, res) {
             req.session.usertype = user.user_type
             req.session.businessname = user.business_name
             res.redirect("/")
-            // res.send("user logged in")
         }
         else {
             // res.send("invalid password")
