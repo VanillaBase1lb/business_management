@@ -29,6 +29,9 @@
             background-position: center center;
             color: white;
         }
+        html {
+            background-color:black;
+        }
 
         </style>
     </head>
@@ -78,23 +81,33 @@
                 </tbody>
             </table>
             <style type="text/css">
-              table          {border:ridge 5px red; color:white}
+              table          {border:ridge 3px red; color:white}
               table td          {color:white}
               table th       {border:inset 1px #000}
               p {
                   margin: 10px;
                 }
+              input {
+                  text-align:center
+              }
             </style>
 
             <br>
             <p id="valid" hidden=true style="text-align: center;color:red">No Products Made / Sold yet</p>
-            <p>Most Sold Product: <input type = "text" id = "mostsold"></p>
-            <p>Most Revenue Generating Product: <input type = "text" id = "mostprofitable"></p>
-            <p>Total Revenue Generated Today: <input type = "text" id = "totalrevenue"></p>
+            <p>Most Sold Product: <input style="background-color:tan" size=5 type = "text" id = "mostsold"></p>
+            <p>Most Revenue Generating Product: <input style="background-color:tan" size=5 type = "text" id = "mostprofitable"></p>
+            <p>Total Revenue Generated Today: <input style="background-color:tan" size=5 type = "text" id = "totalrevenue"></p>
             <!-- <script>console.log(results)</script> -->
             <script>datewiselogs()</script>
             <!-- <div class="d-flex justify-content-center m-3 p-3"> -->
             <!-- <button type="submit" class="btn btn-primary" onclick="datewiselogs()">See Logs</button> -->
+            <br>
+            <br>
+            <p style="text-align:center">Enter a New Product to add: <input size=3 type = "text" id = "product_name"></p>
+            <p style="text-align:center">Enter the Cost of New Product: <input size=3 type = "number" id = "product_cost"></p>
+            <div class="d-flex justify-content-center m-3 p-3">
+            <button type="submit" class="btn btn-primary" onclick="addProduct()">Add</button>
+            </div>
 
             </div>
 

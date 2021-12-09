@@ -22,11 +22,15 @@
             background-color: white;
         }
         body {
+            background-color: black;
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("/static/dashboard.jpg");
-            background-size:     cover;                      /* <------ */
+            background-size:     100% 100%;                      /* <------ */
             background-repeat:   no-repeat;
             background-position: center center;
             color: white;
+        }
+        html {
+            background-color:black;
         }
         
 
@@ -101,9 +105,9 @@
             </style>
             <br>
             <p id="valid" style="text-align: center;color:red">No Date Range selected!</p>
-            <p class="data">Most Sold Product: <input type = "text" id = "mostsold"></p>
-            <p class="data">Most Revenue Generating Product: <input type = "text" id = "mostprofitable"></p>
-            <p class="data">Total Revenue Generated: <input type = "text" id = "totalrevenue"></p>
+            <p class="data">Most Sold Product: <input size=5 type = "text" id = "mostsold"></p>
+            <p class="data">Most Revenue Generating Product: <input size=5 type = "text" id = "mostprofitable"></p>
+            <p class="data">Total Revenue Generated: <input size=5 type = "text" id = "totalrevenue"></p>
             <!-- <script>console.log(results)</script> -->
             <!-- <script>fillTable()</script> -->
             <div class="d-flex justify-content-center m-3 p-3">
