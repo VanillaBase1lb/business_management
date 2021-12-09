@@ -14,7 +14,8 @@ const server_config = {
     database:
     {
         username: "newuser",
-        password: "newuser"
+        password: "newuser",
+        db: "testdbms"
     },
     session:
     {

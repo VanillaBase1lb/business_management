@@ -38,7 +38,7 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}));
 // connect mongoose
 // username and password are in config.js because
-mongoose.connect(`mongodb+srv://${server_config.database.username}:${server_config.database.password}@testdbms.hgojw.mongodb.net/testdbms?retryWrites=true&w=majority`).catch(err => console.log(err))
+mongoose.connect(`mongodb+srv://${server_config.database.username}:${server_config.database.password}@${server_config.database.db}.hgojw.mongodb.net/${server_config.database.db}?retryWrites=true&w=majority`).catch(err => console.log(err))
 
 // routing
 app.get("/test", (req, res) => {
