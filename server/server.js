@@ -15,6 +15,8 @@ let { madeProduct } = require("./productapi")
 let { soldProduct } = require("./productapi")
 let { logs } = require("./logs")
 let { apiProfile } = require("./profile")
+var bodyParser = require('body-parser')
+
 
 // loads the configuration
 const server_config = require(__dirname + "/config")
@@ -33,7 +35,7 @@ app.use(sessions({
     resave: true
 }));;
 app.use(cookieParser())
-
+app.use(bodyParser.urlencoded({extended: true}));
 // connect mongoose
 // username and password are in config.js because
 mongoose.connect(`mongodb+srv://${server_config.database.username}:${server_config.database.password}@testdbms.hgojw.mongodb.net/testdbms?retryWrites=true&w=majority`).catch(err => console.log(err))
@@ -43,6 +45,11 @@ app.get("/test", (req, res) => {
     res.sendFile(path.join(__dirname, "/../client/html/test.html"))
 })
 
+app.post("/testtest", (req, res) => {
+    console.log(req.body)
+    // res.sendFile(path.join(__dirname, "/../client/html/test.html"))
+    res.send("ok")
+})
 app.get(["/", "/home"], (req, res) => {
     // const today = new Date()
     // console.log(today.getDate())

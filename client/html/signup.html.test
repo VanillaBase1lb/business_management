@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <!-- <link rel="stylesheet" href="/static/signup.css"> -->
+    <script src="/static/signup.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="text">New Here!<br>SignUp Now</div>
+    <form>
+        <div class="field">
+            <input type="text" id="email" placeholder="Enter Email" />
+        </div>
+
+        <div class="field">
+            <div class="label">Type:</div>
+                <select id="user_type" class="form-control-lg">
+                  <option value=0 selected>Owner</option>
+                  <option value=1>Shop Manager</option>
+                  <option value=2>Factory Manager</option>
+                </select>
+        </div>
+        <div class="field">
+            <input type="text" id="username" placeholder="Enter Username" required/>
+        </div>
+
+        <div class="field">
+            <input type="password" id="password" placeholder="Enter Password" required />
+        </div>
+
+        <div class="field">
+            <input type="text" id="business_name" placeholder="Busines Name" required />
+        </div>
+        <button onclick="sendData()">SIGN UP</button>
+      </form>
+      </div>
+</body>
+</html>

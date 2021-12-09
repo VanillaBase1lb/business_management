@@ -18,16 +18,17 @@
         <title>Owner</title>
         <style>
 
-<!-- body { -->
-    <!--     background-image: url("/static/bg5.png"); -->
-    <!--     opacity: 1; -->
-    <!--     background-repeat: no-repeat; -->
-    <!--     background-position: center; -->
-    <!-- } -->
-
-    .header_of_table {
-        background-color: white;
-    }
+        .header_of_table {
+            background-color: white;
+        }
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("/static/dashboard.jpg");
+            background-size:     cover;                      /* <------ */
+            background-repeat:   no-repeat;
+            background-position: center center;
+            color: white;
+        }
+        
 
         </style>
         <script>
@@ -56,7 +57,7 @@
                                 <a class="nav-link active" aria-current="page" href="/owner/dashboard">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/profile">Profile</a>
+                                <a class="nav-link" href="/userprofile">Profile</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/logout">Log Out</a>
@@ -69,27 +70,40 @@
                 </div>
             </nav>
 
-            <p>Start Date: <input type = "text" id = "datepicker1"></p>
-            <p>End Date: <input type = "text" id = "datepicker2"></p>
+            <span class="date" style="float:left">Start Date: <input type = "text" id = "datepicker1"></span>
+            <span class="date" style="float:right">End Date: <input type = "text" id = "datepicker2"></span>
+            <br>
+            <br>
             <table class="table" id="maintable">
                 <thead>
                     <tr class="header_of_table">
-                        <th>Product Name</th>
-                        <th>Date</th>
-                        <th>Quantity Made</th>
-                        <th>Quantity Sold</th>
-                        <th>Revenue</th>
-                        <th>Consistent</th>
+                        <th style="background-color:yellowgreen">Product Name</th>
+                        <th style="background-color:yellowgreen">Date</th>
+                        <th style="background-color:yellowgreen">Quantity Made</th>
+                        <th style="background-color:yellowgreen">Quantity Sold</th>
+                        <th style="background-color:yellowgreen">Revenue</th>
+                        <th style="background-color:yellowgreen">Consistent</th>
                     </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
-
+            <style type="text/css">
+              table          {border:ridge 5px red; color:white}
+              table td          {color:white}
+              table th       {border:inset 1px #000}
+              .date {
+                  margin: 10px;
+                }
+              .data {
+                  margin-left:10px
+              }
+            </style>
             <br>
-            <p>Most Sold Product: <input type = "text" id = "mostsold"></p>
-            <p>Most Revenue Generating Product: <input type = "text" id = "mostprofitable"></p>
-            <p>Total Revenue Generated: <input type = "text" id = "totalrevenue"></p>
+            <p id="valid" style="text-align: center;color:red">No Date Range selected!</p>
+            <p class="data">Most Sold Product: <input type = "text" id = "mostsold"></p>
+            <p class="data">Most Revenue Generating Product: <input type = "text" id = "mostprofitable"></p>
+            <p class="data">Total Revenue Generated: <input type = "text" id = "totalrevenue"></p>
             <!-- <script>console.log(results)</script> -->
             <!-- <script>fillTable()</script> -->
             <div class="d-flex justify-content-center m-3 p-3">

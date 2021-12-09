@@ -38,7 +38,7 @@ async function logs(req, res) {
                 records[i].product_amount_sold = recordssold[j].product_amount
                 const index = productsall.findIndex((element) => records[i].product_name == element.product_name)
                 productsall[index].soldcount += records[i].product_amount_sold
-                if (records[i].product_amount_sold >= records[i].product_amount_made) {
+                if (records[i].product_amount_sold > records[i].product_amount_made) {
                     records[i].consistent = false
                 }
                 else {

@@ -24,7 +24,7 @@ async function datewiselogs() {
     window.results = await res.json()
     // console.log(results)
     $('#maintable tbody').empty()
-    var rows = "";
+    let rows = "";
     $.each(results.records, function(){
         rows += "<tr><td>" + this.product_name + "</td><td>" + this.date.substring(1,11) +
             "</td><td>" + this.product_amount_made + "</td><td>" +
@@ -32,6 +32,7 @@ async function datewiselogs() {
             "</td><td>" + this.consistent + "</td></tr>";
     });
 
+    document.getElementById("valid").hidden=true
     $( rows ).appendTo( "#maintable tbody" );
     document.getElementById("mostsold").value = results.bestseller
     document.getElementById("mostprofitable").value = results.highestrevenueseller

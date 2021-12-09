@@ -1,185 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/test.css"></link>
-    <!-- <script>var results=0</script> -->
-    <!-- <script src="/static/owner/dashboard.js"></script> -->
-    <!-- <script>datewiselogs()</script> -->
-    <!-- <script>console.log(results)</script> -->
-    <title>Owner</title>
-    <style>
-
-      <!-- body { -->
-      <!--     background-image: url("/static/bg5.png"); -->
-      <!--     opacity: 1; -->
-      <!--     background-repeat: no-repeat; -->
-      <!--     background-position: center; -->
-      <!-- } -->
-
-      .header_of_table {
-        background-color: white;
-      }
-  
-      </style>
-
-  </head>
-<body>
-
-
-<div class="vh-100">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid m-3">
-          <a class="navbar-brand" href="#">Owner</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/profile">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/logout">Log Out</a>
-              </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-    <!-- <table class="table" id="maintable"> -->
-    <!--     <thead> -->
-    <!--       <tr class="header_of_table"> -->
-    <!--         <th>#</th> -->
-    <!--         <th>First</th> -->
-    <!--         <th>Last</th> -->
-    <!--         <th>Handle</th> -->
-    <!--         <th>Price</th> -->
-    <!--       </tr> -->
-    <!--     </thead> -->
-    <!--     <tbody> -->
-    <!--       <!-- <tr> --> -->
-    <!--       <!--   <th scope="row">1</th> --> -->
-    <!--       <!--   <td> <input type="text" value="Mark"></td> --> -->
-    <!--       <!--   <td><input type="text" value="Mark"></td> --> -->
-    <!--       <!--   <td><input type="text" value="Mark"></td> --> -->
-    <!--       <!-- </tr> --> -->
-    <!--       <!-- <tr> --> -->
-    <!--       <!--   <th scope="row">2</th> --> -->
-    <!--       <!--   <td><input type="text" value="Mark"></td> --> -->
-    <!--       <!--   <td><input type="text" value="Mark"></td> --> -->
-    <!--       <!--   <td><input type="text" value="Mark"></td> --> -->
-    <!--       <!-- </tr> --> -->
-    <!--       <!-- <tr> --> -->
-    <!--       <!--   <th scope="row">3</th> --> -->
-    <!--       <!--   <td colspan="2"><input type="text" value="Mark"></td> --> -->
-    <!--       <!--   <td><input type="text" value="Mark"></td> --> -->
-    <!--       <!-- </tr> --> -->
-    <!--     </tbody> -->
-    <!--   </table> -->
-  
-  
-  <div class="table">
-    
-    <div class="row header blue">
-      <div class="cell">
-        Username
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>SignUp</title>
+      <link rel="stylesheet" href="/static/test.css">
+      <script src="https://kit.fontawesome.com/29ecd4a282.js" crossorigin="anonymous"></script>
+   </head>
+   <body>
+      <div class="container">
+         <header>Signup Form</header>
+         <div class="progress-bar">
+            <div class="step">
+               <p>
+                  Name
+               </p>
+               <div class="bullet">
+                  <span>1</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Contact
+               </p>
+               <div class="bullet">
+                  <span>2</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Place
+               </p>
+               <div class="bullet">
+                  <span>3</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Submit
+               </p>
+               <div class="bullet">
+                  <span>4</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+         </div>
+         <div class="form-outer">
+            <form action="/testtest" method="post">
+               <div class="page slide-page">
+                  <div class="title">
+                     Basic Info:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        First Name
+                     </div>
+                     <input type="text" name="firstname" placeholder="enter first name"/>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Last Name
+                     </div>
+                     <input type="text" name="lastname" placeholder="enter last name"/>
+                  </div>
+                  <div class="field">
+                     <button class="firstNext next">Next</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Contact Info:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Email Address
+                     </div>
+                     <input type="text" name="email" placeholder="enter email id"/>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Phone Number
+                     </div>
+                     <input type="Number" name="phno" placeholder="enter phone number"/>
+                  </div>
+                  <div class="field btns">
+                     <button class="prev-1 prev">Previous</button>
+                     <button class="next-1 next">Next</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Address:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        PIN Code
+                     </div>
+                     <input type="Number" name="pincode" placeholder="enter pincode"/>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        City
+                     </div>
+                     <select>
+                        <option>Hyderabad</option>
+                        <option>Bangalore</option>
+                        <option>Jaipur</option>
+                     </select>
+                  </div>
+                  <div class="field btns">
+                     <button class="prev-2 prev">Previous</button>
+                     <button class="next-2 next">Next</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Login Details:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Username
+                     </div>
+                     <input type="text" name="username" placeholder="enter username"/>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Password
+                     </div>
+                     <input type="password" name="password" placeholder="enter password"/>
+                  </div>
+                  <div class="field btns">
+                     <button class="prev-3 prev">Previous</button>
+                     <button class="submit">Submit</button>
+                  </div>
+               </div>
+            </form>
+         </div>
       </div>
-      <div class="cell">
-        Email
-      </div>
-      <div class="cell">
-        Password
-      </div>
-      <div class="cell">
-        Active
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Username">
-        ninjalug
-      </div>
-      <div class="cell" data-title="Email">
-        misterninja@hotmail.com
-      </div>
-      <div class="cell" data-title="Password">
-        ************
-      </div>
-      <div class="cell" data-title="Active">
-        Yes
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Username">
-        jsmith41
-      </div>
-      <div class="cell" data-title="Email">
-        joseph.smith@gmail.com
-      </div>
-      <div class="cell" data-title="Password">
-        ************
-      </div>
-      <div class="cell" data-title="Active">
-        No
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Username">
-        1337hax0r15
-      </div>
-      <div class="cell" data-title="Email">
-        hackerdude1000@aol.com
-      </div>
-      <div class="cell" data-title="Password">
-        ************
-      </div>
-      <div class="cell" data-title="Active">
-        Yes
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Username">
-        hairyharry19
-      </div>
-      <div class="cell" data-title="Email">
-        harryharry@gmail.com
-      </div>
-      <div class="cell" data-title="Password">
-        ************
-      </div>
-      <div class="cell" data-title="Active">
-        Yes
-      </div>
-    </div>
-    
-  </div>
-  
-      <!-- <script>console.log(results)</script> -->
-      <!-- <script>fillTable()</script> -->
-      <div class="d-flex justify-content-center m-3 p-3">
-      <button type="submit" class="btn btn-primary" onclick="console.log(results)">Apply Changes</button>
-
-    </div>
-
-  </div>
-</body>
-<
+      <!-- <script> 
+        $(document).ready(function(){
+             $("#submit").click(function(){
+           $('input').attr('required', true); 
+           document.getElementById("alert_down").innerHTML  
+                      = "Required attribute enabled"; 
+           });
+        });
+      </script> -->
+      <script src="/static/test.js"></script>
+   </body>
+</html>
