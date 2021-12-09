@@ -151,7 +151,7 @@ app.get("/api/products", (req, res) => {
 
 app.post("/api/addproduct", (req, res) => {
     // console.log(req.session.usertype)
-    if (req.session.usertype == 2) {
+    if (req.session.usertype == 0) {
         addProduct(req, res)
     }
     else {
