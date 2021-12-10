@@ -11,6 +11,12 @@ async function logs(req, res) {
     const recordsmade = await ProductMade.find({date: {$gte: date1, $lte: date2}, business_name: req.session.businessname})
     var records = []
     var productsall = []
+    let backupresponseobj = {
+        // records: [{
+        //
+        // }],
+        // totalrevenue: 0
+    }
     const products = await Product.find({business_name: req.session.businessname})
     for (let i = 0; i < products.length; i++) {
         let obj = {
@@ -58,13 +64,17 @@ async function logs(req, res) {
     var bestseller = "bestseller"
     const soldmax = Math.max.apply(null, productsall.map(function (x)  {return x.soldcount}))
     const i1 = productsall.findIndex((element) => soldmax == element.soldcount)
+    if (i1 == -1) {
+        res.json(backupresponseobj)
+        return
+    }
     bestseller = productsall[i1].product_name
 
     var highestrevenueseller = "highestrevenueseller"
     const revenuemax = Math.max.apply(null, productsall.map(function (x)  {return x.revenuegenerated}))
     const i2 = productsall.findIndex((element) => revenuemax == element.revenuegenerated)
     if (i2 == -1) {
-        res.send("i forgot to fix this bug")
+        res.json(backupresponseobj)
         return
     }
     highestrevenueseller = productsall[i2].product_name

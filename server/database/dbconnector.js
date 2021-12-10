@@ -15,12 +15,10 @@ const userSchema = new Schema({
     email: {
         type: String,
         trim: true,
-        match: [/.+\@.+\..+/, 'invalid email'],
-        unique: true
+        match: [/.+\@.+\..+/, 'invalid email']
     },
     user_type: Number,
-    business_name: String,
-    confirmed: Boolean, // PENDING review whether to add or not
+    business_name: String
 })
 
 const productSchema = new Schema({

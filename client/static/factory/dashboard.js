@@ -38,32 +38,37 @@ async function datewiselogs() {
 
 
     let rows = "";
-    $.each(results.records, function(){
-        rows += "<tr><td>" + this.product_name +
-            "</td><td>" + this.product_amount_made + "</td></tr>";
-    });
-
-    if (rows.length < 1) {
-        // console.log("empty")
-        // $("valid").show()
-        document.getElementById("valid").hidden=false
-    }
-
     let rows2 = "";
-    $.each(results2, function(){
-        rows2 += "<tr><td>" + this.product_name +
-            "</td><td>" + this.product_cost + "</td></tr>";
-    });
 
-    if (rows2.length < 1) {
+    if (results.length < 1) {
         // console.log("empty")
         // $("valid").show()
         document.getElementById("valid").hidden=false
     }
+    else {
+        $.each(results.records, function(){
+            rows += "<tr><td>" + this.product_name +
+                "</td><td>" + this.product_amount_made + "</td></tr>";
+        });
 
-    $.each(results2, function(){
-        $('#product_name').append(new Option(this.product_name, this.product_name))
-    });
+        document.getElementById("valid").hidden=true
+    }
+
+    if (results2.length < 1) {
+        // console.log("empty")
+        // $("valid").show()
+        document.getElementById("valid").hidden=false
+    }
+    else {
+        $.each(results2, function(){
+            rows2 += "<tr><td>" + this.product_name +
+                "</td><td>" + this.product_cost + "</td></tr>";
+        });
+        $.each(results2, function(){
+            $('#product_name').append(new Option(this.product_name, this.product_name))
+        });
+        document.getElementById("valid").hidden=true
+    }
 
     $( rows ).appendTo( "#maintable tbody" );
     $( rows2 ).appendTo( "#secondtable tbody" );
@@ -75,6 +80,9 @@ function sendData() {
       product_name: document.getElementById("product_name").value,
       product_amount: parseInt(document.getElementById("product_amount_made").value)
    };
+    if (data.product_name.length < 1) {
+        return
+    }
    // console.log(data)
    // console.log("test")
    // Send a post request

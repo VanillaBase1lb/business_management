@@ -25,12 +25,13 @@ async function apiProfile(req, res) {
         return
     }
     // PENDING multiple owners/managers for same business cannot exist
-    User.exists({$or: [{username: req.body.username}, {email: req.body.email}]}, (err, doc) => {
-        if (doc) {
-            // res.send("username or email already exists")
-            alert("username, email or business name already exists")
-            res.json({msg: "username, email or business name already exists"})
-            return
+    User.find({$or: [{username: req.body.username}, {email: req.body.email}]}, (err, doc) => {
+        for (let i = 0; i < doc.length; i++) {
+            if (doc[i].username != req.session.userid) {
+                alert("username or email already exists")
+                res.json({msg: "username or email already exists"})
+                return
+            }
         }
         bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
             User.findOneAndUpdate({username: req.session.userid}, {
@@ -38,6 +39,7 @@ async function apiProfile(req, res) {
                 password_hash: hash,
                 email: req.body.email
             }, {new: true}, (err, doc) => {
+                alert("Please log back in")
                 req.session.destroy()
                 res.redirect("/")
             })
