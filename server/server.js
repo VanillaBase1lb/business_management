@@ -77,6 +77,7 @@ app.get(["/", "/home"], (req, res) => {
 app.get("/signup", (req, res) => {
     res.sendFile(path.join(__dirname, "/../client/html/signup.html"))
 })
+
 app.post("/signup", (req, res) => {
     signupUser(req, res)
 })
@@ -90,7 +91,13 @@ app.post("/login", (req, res) => {
 })
 
 app.get("/userprofile", (req, res) => {
-    res.sendFile(path.join(__dirname, "/../client/html/profile.html"))
+    if (req.session.userid) {
+        res.sendFile(path.join(__dirname, "/../client/html/profile.html"))
+    }
+    else {
+        alert("User not logged in")
+        res.redirect("/")
+    }
 })
 
 app.get("/owner/dashboard", (req, res) => {

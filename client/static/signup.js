@@ -19,7 +19,6 @@ function sendData() {
             "Content-type": "application/json"
         }
     }).then(
-        // window.location.pathname = "/"
-        res => console.log(res)
+        res => window.location.pathname = "/"
     )
 }
