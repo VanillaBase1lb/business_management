@@ -74,8 +74,8 @@
                 </div>
             </nav>
 
-            <span class="date" style="float:left">Start Date: <input type = "text" id = "datepicker1"></span>
-            <span class="date" style="float:right">End Date: <input type = "text" id = "datepicker2"></span>
+            <span class="date" style="float:left">Start Date: <input type = "text" id = "datepicker1" size=4></span>
+            <span class="date" style="float:right">End Date: <input type = "text" id = "datepicker2" size=4></span>
             <br>
             <br>
             <table class="table" id="maintable">
@@ -102,12 +102,24 @@
               .data {
                   margin-left:10px
               }
+              input {
+                  text-align:center;
+                  color:yellow;
+                  font-weight:bold;
+                  border-radius:5px
+              }
+              #datepicker1 {
+                  color:green
+              }
+              #datepicker2 {
+                  color:green
+              }
             </style>
             <br>
             <p id="valid" style="text-align: center;color:red">No Date Range selected!</p>
-            <p class="data">Most Sold Product: <input size=5 type = "text" id = "mostsold"></p>
-            <p class="data">Most Revenue Generating Product: <input size=5 type = "text" id = "mostprofitable"></p>
-            <p class="data">Total Revenue Generated: <input size=5 type = "text" id = "totalrevenue"></p>
+            <p class="data">Your most popular product is <input size=1 disabled type = "text" id = "mostsold"> ! Sell these at a higher profit margin to make more money.</p>
+            <p class="data"><input size=1 disabled type = "text" id = "mostprofitable"> makes you the most revenue! Increase its production.</p>
+            <p class="data">You made <input size=2 disabled type = "text" id = "totalrevenue"> within this time period.</p>
             <!-- <script>console.log(results)</script> -->
             <!-- <script>fillTable()</script> -->
             <div class="d-flex justify-content-center m-3 p-3">

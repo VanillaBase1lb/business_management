@@ -46,6 +46,7 @@ Details in server/README.md
 <li> /shop/dashboard</li>
 <li> /userprofile</li>
 <li> /profile</li>
+<li> /api/logs</li>
 <li> /owner/logs</li>
 <li> /logout</li>
 <li> /api/user</li>
