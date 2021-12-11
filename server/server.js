@@ -219,7 +219,7 @@ app.get("/404page", (req, res) => {
 })
 
 // create https server
-server = https.createServer(ssl_params, app).listen(server_config.socket.port, server_config.socket.ipaddr, () => {
-    console.log(`Server running at: https://${server_config.socket.ipaddr}:${server_config.socket.port}`)
+server = https.createServer(ssl_params, app).listen(process.env.PORT || server_config.socket.port, server_config.socket.ipaddr, () => {
+    console.log(`Server running at: https://${server_config.socket.ipaddr}:${process.env.PORT || sserver_config.socket.port}`)
 })
 

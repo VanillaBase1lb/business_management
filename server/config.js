@@ -3,7 +3,7 @@ fs = require("fs")
 const server_config = {
     socket:
     {
-        ipaddr: "localhost",
+        ipaddr: "0.0.0.0",
         port: 8080
     },
     ssl:
