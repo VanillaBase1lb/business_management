@@ -1,5 +1,5 @@
 const path = require("path")
-const https = require("https")
+const http = require("http")
 const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
@@ -20,10 +20,10 @@ var bodyParser = require('body-parser')
 
 // loads the configuration
 const server_config = require(__dirname + "/config")
-const ssl_params = {
-    key: server_config.ssl.key,
-    cert: server_config.ssl.cert
-}
+// const ssl_params = {
+//     key: server_config.ssl.key,
+//     cert: server_config.ssl.cert
+// }
 
 // sets from where to get static files and which endpoint to access it
 app.use("/static", express.static(__dirname + "/../client/static"))
@@ -219,7 +219,11 @@ app.get("/404page", (req, res) => {
 })
 
 // create https server
-server = https.createServer(ssl_params, app).listen(process.env.PORT || server_config.socket.port, server_config.socket.ipaddr, () => {
-    console.log(`Server running at: https://${server_config.socket.ipaddr}:${process.env.PORT || sserver_config.socket.port}`)
+// server = https.createServer(ssl_params, app).listen(process.env.PORT || server_config.socket.port, server_config.socket.ipaddr, () => {
+//     console.log(`Server running at: https://${server_config.socket.ipaddr}:${process.env.PORT || sserver_config.socket.port}`)
+// })
+
+server = http.createServer(app).listen(process.env.PORT || server_config.socket.port, server_config.socket.ipaddr, () => {
+    console.log(`Server running at: http://${server_config.socket.ipaddr}:${process.env.PORT || server_config.socket.port}`)
 })
 

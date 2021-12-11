@@ -6,11 +6,6 @@ const server_config = {
         ipaddr: "0.0.0.0",
         port: 8080
     },
-    ssl:
-    {
-        key: fs.readFileSync(__dirname + "/selfsigned-key.key"),
-        cert: fs.readFileSync(__dirname + "/selfsigned-cert.crt")
-    },
     database:
     {
         username: "newuser",
