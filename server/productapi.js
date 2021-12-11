@@ -19,7 +19,7 @@ async function apiProduct(req, res) {
 async function addProduct(req, res) {
     Product.exists({product_name: req.body.product_name, business_name: req.session.businessname}, (err, doc) => {
         if (doc) {
-            alert("product already exists")
+            // alert("product already exists")
             res.json({msg: "product already exists"})
             return
         }
@@ -39,7 +39,7 @@ async function addProduct(req, res) {
 function madeProduct(req, res) {
     Product.exists({product_name: req.body.product_name, business_name: req.session.businessname}, (err, doc) => {
         if (!doc) {
-            alert("product does not exist")
+            // alert("product does not exist")
             res.json({msg: "product does not exist"})
             return
         }

@@ -53,6 +53,8 @@ function addProduct() {
    // console.log(data)
    // console.log("test")
    // Send a post request
+    if (!data.product_name || !data.product_cost)
+        return
    fetch(URL, {
        method: "POST",
        body: JSON.stringify(data),
@@ -60,6 +62,14 @@ function addProduct() {
            "Content-type": "application/json"
        }
    }).then(
-       res => alert(`Product Name: ${data.product_name}\nProduct Cost: ${data.product_cost}`)
+       // res => alert(`Product Name: ${data.product_name}\nProduct Cost: ${data.product_cost}`)
+       res => res.json().then( res2 => {
+           if (res2.msg == "product added")
+            alert(`Product Name: ${data.product_name}\nProduct Cost: ${data.product_cost}\n Check with your Managers`)
+           else if (res2.msg)
+               alert(res2.msg)
+           else
+               window.location.href = "/"
+       })
    )
 }

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
-const alert = require("alert")
+// const alert = require("alert")
 let { User } = require("./database/dbconnector")
 
 async function loginUser(req, res) {
@@ -11,17 +11,18 @@ async function loginUser(req, res) {
             req.session.userid = user.username
             req.session.usertype = user.user_type
             req.session.businessname = user.business_name
-            res.redirect("/")
+            res.json({red: "/"})
+            // res.redirect("/")
         }
         else {
             // res.send("invalid password")
-            alert("invalid password")
+            // alert("invalid password")
             res.json({msg: "invalid password"})
         }
     }
     else {
         // res.send("invalid username")
-        alert("invalid username")
+        // alert("invalid username")
         res.json({msg: "invalid username"})
     }
 }

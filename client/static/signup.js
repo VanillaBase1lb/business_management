@@ -19,6 +19,11 @@ function sendData() {
             "Content-type": "application/json"
         }
     }).then(
-        res => window.location.pathname = "/"
+       res => res.json().then( res2 => {
+           if (res2.msg)
+               alert(res2.msg)
+           else
+               window.location.href = "/"
+       })
     )
 }

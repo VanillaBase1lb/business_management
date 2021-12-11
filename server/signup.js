@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
-const alert = require("alert")
+// const alert = require("alert")
 let { User } = require("./database/dbconnector")
 
 const saltRounds = 5
@@ -11,18 +11,18 @@ async function signupUser(req, res) {
     let password_length = 3
     if (!username_regex.test(req.body.username)) {
         // res.send("invalid username only digits and lowercase allowed")
-        alert("invalid username only digits and lowercase allowed")
+        // alert("invalid username only digits and lowercase allowed")
         res.json({msg: "invalid username only digits and lowercase allowed"})
         return
     }
     if (!email_regex.test(req.body.email)) {
         // res.send("invalid email")
-        alert("invalid email")
+        // alert("invalid email")
         res.json({msg: "invalid email"})
         return
     }
     if (req.body.password.length < password_length) {
-        alert("password too short")
+        // alert("password too short")
         res.json({msg: "password too short"})
         return
     }
@@ -31,7 +31,7 @@ async function signupUser(req, res) {
         user_type: req.body.user_type}]}, (err, doc) => {
         if (doc) {
             // res.send("username or email already exists")
-            alert("username, email or business name already exists")
+            // alert("username, email or business name already exists")
             res.json({msg: "username, email or business name already exists"})
             return
         }
@@ -52,7 +52,8 @@ async function signupUser(req, res) {
             req.session.usertype = user.user_type
             req.session.businessname = user.business_name
             // console.log(req.session.usertype)
-            res.redirect("/")
+            // res.redirect("/")
+            res.json({red: "/"})
             return
         })
     })
