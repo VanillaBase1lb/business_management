@@ -1,3 +1,5 @@
+// this is not how one should store sensitive credentials, i know
+// everything here is throwaway. use it 
 fs = require("fs")
 
 const server_config = {
@@ -8,9 +10,9 @@ const server_config = {
     },
     database:
     {
-        username: "newuser",
-        password: "newuser",
-        db: "testdbms"
+        username: "throwawayuser",
+        password: "throwawaypassword",
+        db: "throwawaydb"
     },
     session:
     {
