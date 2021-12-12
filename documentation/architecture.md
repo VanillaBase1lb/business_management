@@ -106,5 +106,9 @@ Details in server/README.md
 
 ![Website Navigation Chart](https://github.com/VanillaBase1lb/business_management/blob/main/documentation/Website%20Navigation.png)
 
+<h2>ER Diagram</h2>
+
+![ER Diagram](https://github.com/VanillaBase1lb/business_management/blob/main/documentation/erdiagram.png)
+
 <h2>Link</h2>
 https://lucid.app/lucidchart/eb511a3e-e0dc-420b-a157-9f23ebf21a63/edit?viewport_loc=265%2C-72%2C2076%2C975%2C0_0&invitationId=inv_0b8f85e1-2cae-4b42-8011-8f5a9a1db758
