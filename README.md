@@ -59,4 +59,16 @@ Now the `Owner` can start adding products. The `Factory` can now make all availa
 
 The `Owner` can track all this progress from their dashboard. This product cycle resets every day. A more comprehensive overview is available for the business owner over at `logs` page. From the summary, the business can determine what products sells the most, what makes the most revenue and how much total revenue is being made over a period of time.
 
+
+Before:
+
+![Factory to Owner](https://github.com/VanillaBase1lb/business_management/blob/main/documentation/baddrawing1.png)
+![Shop to Owner](https://github.com/VanillaBase1lb/business_management/blob/main/documentation/baddrawing2.png)
+
+
+After:
+
+![Factory and Shop to Computer](https://github.com/VanillaBase1lb/business_management/blob/main/documentation/baddrawing3.png)
+![Computer to Owner](https://github.com/VanillaBase1lb/business_management/blob/main/documentation/baddrawing4.png)
+
 [Development History](https://github.com/vanillabase1lb/business_management/graphs/contributors)
