@@ -6,6 +6,7 @@ This is a web app for managing and tracking small scaled product-based businesse
 
 * [Node.js](https://nodejs.org/)
 * [Express.js](https://expressjs.com/)
+* [MongoDB](https://mongodb.com/)
 * HTML
 * CSS
 * JavaScript
